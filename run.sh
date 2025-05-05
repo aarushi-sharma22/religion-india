@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
-# 1) Bootstrap venv / install deps
+# ─── 1) Bootstrap venv + install deps ────────────────────────────────────────
 if [ ! -d "venv" ]; then
   echo "Creating virtual environment…"
   python3 -m venv venv
@@ -12,16 +12,19 @@ echo "Installing dependencies…"
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# 2) If districts.csv is missing, run the wiki scraper; otherwise skip
-if [ -s data/districts.csv ]; then
-  echo "✓ data/districts.csv found — skipping wiki-district-scrape.py"
+# ─── 2) Make sure we have geonames IDs ──────────────────────────────────────
+GEONAMES_CSV="data/districts_geonames.csv"
+if [ -s "$GEONAMES_CSV" ]; then
+  echo "✓ $GEONAMES_CSV found — skipping geo-ID lookup"
 else
-  echo "data/districts.csv not found — running wiki-district-scrape.py"
-  python src/wiki-district-scrape.py
+  echo "✗ Error: $GEONAMES_CSV not found!"
+  echo "  Please run src/fetch-geo-ids.py first."
+  exit 1
 fi
 
-# 3) Now run the GeoNames lookup against the existing districts.csv
-echo "Running fetch-geo-ids.py (reads data/districts.csv)…"
-python src/fetch-geo-ids.py
+# ─── 3) Scrape marriage dates ────────────────────────────────────────────────
+echo "Running date-scraper (src/fetch-date.py)…"
+python src/fetch-date.py
 
 echo "All done."
+
