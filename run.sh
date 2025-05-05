@@ -1,20 +1,27 @@
 #!/bin/bash
+set -e
 
-# Create a virtual environment if it doesn't exist
+# 1) Bootstrap venv / install deps
 if [ ! -d "venv" ]; then
-  echo "Creating virtual environment..."
+  echo "Creating virtual environment…"
   python3 -m venv venv
 fi
-
-# Activate the virtual environment
 source venv/bin/activate
 
-# Upgrade pip and install dependencies
-echo "Installing dependencies..."
+echo "Installing dependencies…"
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Run the scraper
-echo "Running fetch_districts.py..."
-python src/fetch_districts.py
+# 2) If districts.csv is missing, run the wiki scraper; otherwise skip
+if [ -s data/districts.csv ]; then
+  echo "✓ data/districts.csv found — skipping wiki-district-scrape.py"
+else
+  echo "data/districts.csv not found — running wiki-district-scrape.py"
+  python src/wiki-district-scrape.py
+fi
 
+# 3) Now run the GeoNames lookup against the existing districts.csv
+echo "Running fetch-geo-ids.py (reads data/districts.csv)…"
+python src/fetch-geo-ids.py
+
+echo "All done."
