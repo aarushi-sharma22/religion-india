@@ -1,5 +1,4 @@
 requests
 pandas
-beautifulsoup4==4.12.2
-playwright
-cloudscraper
+beautifulsoup4
+playwright        
