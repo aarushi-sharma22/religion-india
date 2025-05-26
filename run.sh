@@ -12,9 +12,11 @@ echo "Installing dependencies…"
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# ensure rapidfuzz is available for recovery step
+pip install rapidfuzz
+
 # ── 1a) ensure a headless browser for Playwright ──────────────────────────────
 if ! playwright install --with-deps firefox >/dev/null 2>&1; then
-  # fall back to a quiet install if playwright is not on PATH yet
   python -m playwright install firefox
 fi
 
@@ -26,7 +28,11 @@ if [ ! -s "$GEONAMES_CSV" ]; then
 fi
 echo "✓ $GEONAMES_CSV found"
 
-# ── 3) scrape marriage dates ──────────────────────────────────────────────────
+# ── 3) recover missing districts via fuzzy‐match ───────────────────────────────
+echo "Recovering missing districts (fuzzy‐match)…"
+python src/recover_missing_districts.py
+
+# ── 4) scrape marriage dates ──────────────────────────────────────────────────
 echo "Running web-scraper (src/web-scrape.py)…"
 python src/web-scrape.py          # add flags here only if you want to override defaults
 

@@ -1,0 +1,353 @@
+state_name,matched_state,state_score,district_name,matched_district,district_score,geoname_id
+Andhra Pradesh,Andhra Pradesh,100.0,Alluri Sitharama Raju,Alluri Sitharama Raju,100.0,12680239
+Andhra Pradesh,Andhra Pradesh,100.0,Anakapalli,Anakapalli,100.0,12680240
+Andhra Pradesh,Andhra Pradesh,100.0,Ananthapuramu,Ananthapur,86.95652173913044,1278673
+Andhra Pradesh,Andhra Pradesh,100.0,Annamayya,Annamayya,100.0,12680241
+Andhra Pradesh,Andhra Pradesh,100.0,Dr. B.R. Ambedkar Konaseema,Konaseema,90.0,12680249
+Andhra Pradesh,Andhra Pradesh,100.0,East Godavari,East Godavari,100.0,1272123
+Andhra Pradesh,Andhra Pradesh,100.0,Eluru,Eluru,100.0,12680246
+Andhra Pradesh,Andhra Pradesh,100.0,Krishna,Krishna,100.0,1265869
+Andhra Pradesh,Andhra Pradesh,100.0,NTR,NTR,100.0,12680255
+Andhra Pradesh,Andhra Pradesh,100.0,Palnadu,Palnadu,100.0,12680257
+Andhra Pradesh,Andhra Pradesh,100.0,Parvathipuram Manyam,Parvathipuram Manyam,100.0,12680258
+Andhra Pradesh,Andhra Pradesh,100.0,Prakasam,Prakasam,100.0,1259346
+Andhra Pradesh,Andhra Pradesh,100.0,Srikakulam,Srikakulam,100.0,1255649
+Andhra Pradesh,Andhra Pradesh,100.0,Sri Sathya Sai,Sri Sathya Sai,100.0,12680263
+Andhra Pradesh,Andhra Pradesh,100.0,West Godavari,West Godavari,100.0,1252873
+Andhra Pradesh,Andhra Pradesh,100.0,YSR Kadapa,YSR Kadapa,100.0,1273801
+Arunachal Pradesh,Arunachal Pradesh,100.0,Anjaw,Anjaw,100.0,9747950
+Arunachal Pradesh,Arunachal Pradesh,100.0,Changlang,Changlang,100.0,9747946
+Arunachal Pradesh,Arunachal Pradesh,100.0,East Kameng,East Kameng,100.0,1272120
+Arunachal Pradesh,Arunachal Pradesh,100.0,East Siang,East Siang,100.0,1272115
+Arunachal Pradesh,Arunachal Pradesh,100.0,Kamle,Kamle,100.0,12572553
+Arunachal Pradesh,Arunachal Pradesh,100.0,Kra Daadi,Kra Daadi,100.0,11875510
+Arunachal Pradesh,Arunachal Pradesh,100.0,Kurung Kumey,Kurung Kumey,100.0,9748007
+Arunachal Pradesh,Arunachal Pradesh,100.0,Lepa Rada,Lepa Rada,100.0,12572554
+Arunachal Pradesh,Arunachal Pradesh,100.0,Lohit,Lohit,100.0,1264818
+Arunachal Pradesh,Arunachal Pradesh,100.0,Longding,Longding,100.0,11875575
+Arunachal Pradesh,Arunachal Pradesh,100.0,Lower Dibang Valley,Lower Dibang Valley,100.0,9748012
+Arunachal Pradesh,Arunachal Pradesh,100.0,Lower Siang,Lower Siang,100.0,11902898
+Arunachal Pradesh,Arunachal Pradesh,100.0,Lower Subansiri,Lower Subansiri,100.0,1264739
+Arunachal Pradesh,Arunachal Pradesh,100.0,Namsai,Namsai,100.0,11875509
+Arunachal Pradesh,Arunachal Pradesh,100.0,Pakke-Kessang,Pakke Kessang,92.3076923076923,12572547
+Arunachal Pradesh,Arunachal Pradesh,100.0,Papum Pare,Papum Pare,100.0,9748025
+Arunachal Pradesh,Arunachal Pradesh,100.0,Shi Yomi,Shi Yomi,100.0,12572546
+Arunachal Pradesh,Arunachal Pradesh,100.0,Siang,Siang,100.0,11875511
+Arunachal Pradesh,Arunachal Pradesh,100.0,Tirap,Tirap,100.0,1254418
+Arunachal Pradesh,Arunachal Pradesh,100.0,Upper Dibang Valley,Dibang Valley,95.0,1272651
+Arunachal Pradesh,Arunachal Pradesh,100.0,Upper Siang,Upper Siang,100.0,9748035
+Arunachal Pradesh,Arunachal Pradesh,100.0,Upper Subansiri,Upper Subansiri,100.0,1253720
+Arunachal Pradesh,Arunachal Pradesh,100.0,West Kameng,West Kameng,100.0,1252869
+Arunachal Pradesh,Arunachal Pradesh,100.0,West Siang,West Siang,100.0,1252865
+Arunachal Pradesh,Arunachal Pradesh,100.0,Keyi Panyor,,0.0,
+Arunachal Pradesh,Arunachal Pradesh,100.0,Bichom,,0.0,
+Assam,Assam,100.0,Baksa,Baksa,100.0,8985782
+Assam,Assam,100.0,Bajali,Bajali,100.0,12680242
+Assam,Assam,100.0,Biswanath,Biswanath,100.0,11875508
+Assam,Assam,100.0,Cachar,Cachar,100.0,1275009
+Assam,Assam,100.0,Charaideo,Charaideo,100.0,11875512
+Assam,Assam,100.0,Chirang,Chirang,100.0,8805933
+Assam,Assam,100.0,Darrang,Darrang,100.0,1273451
+Assam,Assam,100.0,Dhubri,Dhubri,100.0,7627078
+Assam,Assam,100.0,Dima Hasao,Dima Hasao,100.0,1261192
+Assam,Assam,100.0,Kamrup,Kamrup,100.0,1268209
+Assam,Assam,100.0,Kamrup Metropolitan,Kamrup Metropolitan,100.0,9747984
+Assam,Assam,100.0,Karbi Anglong,Karbi Anglong,100.0,1267812
+Assam,Assam,100.0,Lakhimpur,Lakhimpur,100.0,1265243
+Assam,Assam,100.0,Majuli,Majuli,100.0,11875578
+Assam,Assam,100.0,Nagaon,Nagaon,100.0,8849144
+Assam,Assam,100.0,Nalbari,Nalbari,100.0,7627084
+Assam,Assam,100.0,Sivasagar,Sivasagar,100.0,1256389
+Assam,Assam,100.0,Sonitpur,Sonitpur,100.0,8739997
+Assam,Assam,100.0,South Salmara-Mankachar,South Salmara Mancachar,91.30434782608697,11875515
+Assam,Assam,100.0,Tamulpur,Tamulpur,100.0,12680267
+Assam,Assam,100.0,West Karbi Anglong,West Karbi Anglong,100.0,11875514
+Bihar,Bihar,100.0,Arwal,Arwal,100.0,9748038
+Bihar,Bihar,100.0,Bhojpur,Bhojpur,100.0,1275871
+Bihar,Bihar,100.0,East Champaran,East Champaran,100.0,1259186
+Bihar,Bihar,100.0,Jehanabad,Jehanabad,100.0,7627222
+Bihar,Bihar,100.0,Kaimur,Kaimur District,90.0,8740934
+Bihar,Bihar,100.0,Lakhisarai,Lakhisarai,100.0,7627235
+Bihar,Bihar,100.0,Madhepura,Madhepura,100.0,7626568
+Bihar,Bihar,100.0,Munger,Munger,100.0,1262483
+Bihar,Bihar,100.0,Nalanda,Nalanda,100.0,1262081
+Bihar,Bihar,100.0,Rohtas,Rohtas,100.0,1258074
+Bihar,Bihar,100.0,Saran,Saran,100.0,1257248
+Bihar,Bihar,100.0,Vaishali,Vaishali,100.0,1253533
+Bihar,Bihar,100.0,West Champaran,West Champaran,100.0,1260208
+Chhattisgarh,Chhattisgarh,100.0,Balrampur-Ramanujganj,Balrampur,90.0,11875517
+Chhattisgarh,Chhattisgarh,100.0,Bastar,Bastar,100.0,1276739
+Chhattisgarh,Chhattisgarh,100.0,Dantewada,Dantewada,100.0,9747953
+Chhattisgarh,Chhattisgarh,100.0,Gaurela-Pendra-Marwahi,Gaurella Pendra Marwahi,88.88888888888889,12680247
+Chhattisgarh,Chhattisgarh,100.0,Janjgir-Champa,Janjgir-Champa,100.0,7627225
+Chhattisgarh,Chhattisgarh,100.0,Jashpur,Jashpur,100.0,7701599
+Chhattisgarh,Chhattisgarh,100.0,Kabirdham,Kabirdham,100.0,7627230
+Chhattisgarh,Chhattisgarh,100.0,Khairagarh-Chhuikhadan-Gandai,Khairgarh Chhuikhadan Gandai,91.22807017543859,12680248
+Chhattisgarh,Chhattisgarh,100.0,Korea,Korea,100.0,7701598
+Chhattisgarh,Chhattisgarh,100.0,Manendragarh-Chirmiri-Bharatpur,Manendragarh Chirimiri Bharatpur,92.06349206349206,12680251
+Chhattisgarh,Chhattisgarh,100.0,Mohla-Manpur-Ambagarh Chowki,Mohla Manpur Ambagarh Chouki,89.28571428571429,12680252
+Chhattisgarh,Chhattisgarh,100.0,Narayanpur,Narayanpur,100.0,9748023
+Chhattisgarh,Chhattisgarh,100.0,Rajnandgaon,Rajnandgaon,100.0,1258832
+Chhattisgarh,Chhattisgarh,100.0,Sarangarh-Bilaigarh,Sarangarh Bilaigarh,94.73684210526316,12680260
+Chhattisgarh,Chhattisgarh,100.0,Sukma,Sukma,100.0,11875524
+Chhattisgarh,Chhattisgarh,100.0,Surajpur,Surajpur,100.0,11875516
+Chhattisgarh,Chhattisgarh,100.0,Surguja,Surguja,100.0,1255347
+Goa,Goa,100.0,North Goa,North Goa,100.0,9255562
+Goa,Goa,100.0,South Goa,South Goa,100.0,9255567
+Gujarat,Gujarat,100.0,Aravalli,Arvalli,93.33333333333333,11875529
+Gujarat,Gujarat,100.0,Banaskantha,Banaskantha,100.0,1277417
+Gujarat,Gujarat,100.0,Chhota Udaipur,,0.0,
+Gujarat,Gujarat,100.0,Dahod,Dahod,100.0,7627226
+Gujarat,Gujarat,100.0,Dang,Dang,100.0,1254616
+Gujarat,Gujarat,100.0,Devbhumi Dwarka,Devbhumi Dwarka,100.0,11875527
+Gujarat,Gujarat,100.0,Gandhinagar,Gandhinagar,100.0,1271716
+Gujarat,Gujarat,100.0,Gir Somnath,Gir Somnath,100.0,11875531
+Gujarat,Gujarat,100.0,Kutch,Kutch,100.0,1268731
+Gujarat,Gujarat,100.0,Mahisagar,Mahisagar,100.0,11875528
+Gujarat,Gujarat,100.0,Mehsana,Mehsana,100.0,1264390
+Gujarat,Gujarat,100.0,Narmada,Narmada,100.0,9165869
+Gujarat,Gujarat,100.0,Navsari,Navsari,100.0,9072825
+Gujarat,Gujarat,100.0,Panchmahal,Panchmahal,100.0,1260571
+Gujarat,Gujarat,100.0,Sabarkantha,Sabarkantha,100.0,1257922
+Gujarat,Gujarat,100.0,Tapi,Tapi,100.0,9072813
+Gujarat,Gujarat,100.0,Vav-Tharad,,0.0,
+Haryana,Haryana,100.0,Gurugram,Gurugram,100.0,1270644
+Haryana,Haryana,100.0,Kurukshetra,Kurukshetra,100.0,1265468
+Himachal Pradesh,Himachal Pradesh,100.0,Kangra,Kangra,100.0,1268085
+Himachal Pradesh,Himachal Pradesh,100.0,Kinnaur,Kinnaur,100.0,1266519
+Himachal Pradesh,Himachal Pradesh,100.0,Kullu,Kullu,100.0,1265710
+Himachal Pradesh,Himachal Pradesh,100.0,Lahaul and Spiti,Lahul and Spiti,96.7741935483871,1265292
+Himachal Pradesh,Himachal Pradesh,100.0,Sirmaur,Sirmaur,100.0,1256073
+Jharkhand,Jharkhand,100.0,Deoghar,Deoghar,100.0,9035761
+Jharkhand,Jharkhand,100.0,East Singhbhum,East Singhbhum,100.0,7701426
+Jharkhand,Jharkhand,100.0,Hazaribag,Hazaribag,100.0,1270165
+Jharkhand,Jharkhand,100.0,Koderma,Koderma,100.0,9747958
+Jharkhand,Jharkhand,100.0,Pakur,Pakur,100.0,7701604
+Jharkhand,Jharkhand,100.0,Palamu,Palamu,100.0,1260783
+Jharkhand,Jharkhand,100.0,Seraikela-Kharsawan,Saraikela-Kharsawan,94.73684210526316,7701601
+Jharkhand,Jharkhand,100.0,West Singhbhum,West Singhbhum,100.0,1256163
+Karnataka,Karnataka,100.0,Ballari,Ballari,100.0,1276510
+Karnataka,Karnataka,100.0,Belagavi,Belagavi,100.0,1276534
+Karnataka,Karnataka,100.0,Bangalore Rural,Bangalore Rural,100.0,1277332
+Karnataka,Karnataka,100.0,Bangalore Urban,Bangalore Urban,100.0,1277331
+Karnataka,Karnataka,100.0,Chamarajanagar,Chamarajanagar,100.0,8224050
+Karnataka,Karnataka,100.0,Chikkaballapur,Chikkaballapur,100.0,8224036
+Karnataka,Karnataka,100.0,Dakshina Kannada,Dakshina Kannada,100.0,1273664
+Karnataka,Karnataka,100.0,Davanagere,Davanagere,100.0,7646984
+Karnataka,Karnataka,100.0,Gadaga,Gadag,90.9090909090909,7909847
+Karnataka,Karnataka,100.0,Kalaburagi,Kalaburagi,100.0,1270753
+Karnataka,Karnataka,100.0,Kodagu,Kodagu,100.0,1266426
+Karnataka,Karnataka,100.0,Ramanagara,Ramanagara,100.0,8224306
+Karnataka,Karnataka,100.0,Tumakuru,Tumakuru,100.0,1254090
+Karnataka,Karnataka,100.0,Udupi,Udupi,100.0,8224051
+Karnataka,Karnataka,100.0,Uttara Kannada,Uttara Kannada,100.0,1253630
+Karnataka,Karnataka,100.0,Vijayanagara,Vijayanagar,95.65217391304348,12680266
+Kerala,Kerala,100.0,Alappuzha,Alappuzha,100.0,1278986
+Kerala,Kerala,100.0,Palakkad,Palakkad,100.0,7289568
+Kerala,Kerala,100.0,Thrissur,Thrissur,100.0,8133543
+Kerala,Kerala,100.0,Wayanad,Wayanad,100.0,6951502
+Madhya Pradesh,Madhya Pradesh,100.0,Agar Malwa,Agar Malwa,100.0,11875535
+Madhya Pradesh,Madhya Pradesh,100.0,Alirajpur,Alirajpur,100.0,9747929
+Madhya Pradesh,Madhya Pradesh,100.0,Harda,Harda,100.0,8740099
+Madhya Pradesh,Madhya Pradesh,100.0,Katni,Katni,100.0,8740806
+Madhya Pradesh,Madhya Pradesh,100.0,Narsinghpur,Narsinghpur,100.0,1261755
+Madhya Pradesh,Madhya Pradesh,100.0,Neemuch,Neemuch,100.0,8739995
+Madhya Pradesh,Madhya Pradesh,100.0,Niwari,Niwari,100.0,12572552
+Madhya Pradesh,Madhya Pradesh,100.0,Sagar,Sagar,100.0,1257852
+Maharashtra,Maharashtra,100.0,Ahmednagar,Ahmednagar,100.0,7626534
+Maharashtra,Maharashtra,100.0,Buldhana,Buldhana,100.0,1275118
+Maharashtra,Maharashtra,100.0,Chandrapur,Chandrapur,100.0,9747944
+Maharashtra,Maharashtra,100.0,Dhule,Dhule,100.0,1272692
+Maharashtra,Maharashtra,100.0,Gadchiroli,Gadchiroli,100.0,7626536
+Maharashtra,Maharashtra,100.0,Mumbai City,Mumbai City District,90.0,1270836
+Maharashtra,Maharashtra,100.0,Mumbai Suburban,Mumbai Suburban,100.0,1270836
+Maharashtra,Maharashtra,100.0,Raigad,Raigad,100.0,7626540
+Maharashtra,Maharashtra,100.0,Sindhudurg,Sindhudurg,100.0,7626539
+Manipur,Manipur,100.0,Chandel,Chandel,100.0,9747955
+Manipur,Manipur,100.0,Imphal East,Imphal East,100.0,9747976
+Manipur,Manipur,100.0,Imphal West,Imphal West,100.0,9747977
+Manipur,Manipur,100.0,Jiribam,Jiribam,100.0,11875583
+Manipur,Manipur,100.0,Kamjong,Kamjong,100.0,11875587
+Manipur,Manipur,100.0,Kangpokpi,Kangpokpi,100.0,11875584
+Manipur,Manipur,100.0,Noney,Noney,100.0,11875585
+Manipur,Manipur,100.0,Pherzawl,Pherzawl,100.0,11875590
+Manipur,Manipur,100.0,Senapati,Senapati,100.0,8740334
+Manipur,Manipur,100.0,Tamenglong,Tamenglong,100.0,8740332
+Manipur,Manipur,100.0,Tengnoupal,Tengnoupal,100.0,11875595
+Manipur,Manipur,100.0,Ukhrul,Ukhrul,100.0,8740338
+Meghalaya,Meghalaya,100.0,East Garo Hills,East Garo Hills,100.0,1271512
+Meghalaya,Meghalaya,100.0,East Jaintia Hills,East Jaintia Hills,100.0,11875537
+Meghalaya,Meghalaya,100.0,East Khasi Hills,East Khasi Hills,100.0,1266857
+Meghalaya,Meghalaya,100.0,Eastern West Khasi Hills,Eastern West Khasi Hills,100.0,12680245
+Meghalaya,Meghalaya,100.0,North Garo Hills,North Garo Hills,100.0,11875538
+Meghalaya,Meghalaya,100.0,Ri Bhoi,Ri Bhoi,100.0,7701507
+Meghalaya,Meghalaya,100.0,South Garo Hills,South Garo Hills,100.0,9748015
+Meghalaya,Meghalaya,100.0,South West Garo Hills,South West Garo Hills,100.0,11875540
+Meghalaya,Meghalaya,100.0,South West Khasi Hills,South West Khasi Hills,100.0,11875539
+Meghalaya,Meghalaya,100.0,West Garo Hills,West Garo Hills,100.0,8986228
+Meghalaya,Meghalaya,100.0,West Jaintia Hills,West Jaintia Hills,100.0,1269523
+Meghalaya,Meghalaya,100.0,West Khasi Hills,West Khasi Hills,100.0,7701511
+Mizoram,Mizoram,100.0,Champhai,Champhai,100.0,9166019
+Mizoram,Mizoram,100.0,Hnahthial,Hnahthial,100.0,12572557
+Mizoram,Mizoram,100.0,Khawzawl,Khawzawl,100.0,12572556
+Mizoram,Mizoram,100.0,Lawngtlai,Lawngtlai,100.0,9166022
+Mizoram,Mizoram,100.0,Saitual,Saitual,100.0,12572555
+Nagaland,Nagaland,100.0,Chümoukedima,Chumoukedima,91.66666666666666,12680244
+Nagaland,Nagaland,100.0,Kiphire,Kiphire,100.0,9748005
+Nagaland,Nagaland,100.0,Niuland,,0.0,
+Nagaland,Nagaland,100.0,Noklak,Noklak,100.0,12680254
+Nagaland,Nagaland,100.0,Peren,Peren,100.0,8335032
+Nagaland,Nagaland,100.0,Phek,Phek,100.0,1259785
+Nagaland,Nagaland,100.0,Shamator,,0.0,
+Nagaland,Nagaland,100.0,Tseminyü,Tseminyu,87.5,12680265
+Odisha,Odisha,100.0,Boudh,Boudh,100.0,8996923
+Odisha,Odisha,100.0,Bhadrak,Bhadrak,100.0,7644924
+Odisha,Odisha,100.0,Debagarh,Debagarh,100.0,9747968
+Odisha,Odisha,100.0,Gajapati,Gajapati,100.0,8533699
+Odisha,Odisha,100.0,Jharsuguda,Jharsuguda,100.0,7627179
+Odisha,Odisha,100.0,Jagatsinghpur,Jagatsinghpur,100.0,7644925
+Odisha,Odisha,100.0,Khordha,Khordha,100.0,7644927
+Odisha,Odisha,100.0,Kendujhar,Kendujhar,100.0,1267268
+Odisha,Odisha,100.0,Kalahandi,Kalahandi,100.0,1268508
+Odisha,Odisha,100.0,Kandhamal,Kandhamal,100.0,7627181
+Odisha,Odisha,100.0,Kendrapara,Kendrapara,100.0,7644926
+Odisha,Odisha,100.0,Malkangiri,Malkangiri,100.0,7627182
+Odisha,Odisha,100.0,Mayurbhanj,Mayurbhanj,100.0,1263245
+Odisha,Odisha,100.0,Nabarangpur,Nabarangpur,100.0,8908677
+Odisha,Odisha,100.0,Nuapada,Nuapada,100.0,8533697
+Odisha,Odisha,100.0,Rayagada,Rayagada,100.0,7627183
+Odisha,Odisha,100.0,Subarnapur,Subarnapur,100.0,9748032
+Punjab,Punjab,100.0,Fatehgarh Sahib,Fatehgarh Sahib,100.0,7909874
+Punjab,Punjab,100.0,Fazilka[a],Fazilka,82.35294117647058,8407166
+Punjab,Punjab,100.0,Firozpur,Firozpur,100.0,1271884
+Punjab,Punjab,100.0,Gurdaspur,Gurdaspur,100.0,1270648
+Punjab,Punjab,100.0,Malerkotla,Malerkotla,100.0,12680250
+Punjab,Punjab,100.0,Rupnagar,Rupnagar,100.0,1257953
+Punjab,Punjab,100.0,Sahibzada Ajit Singh Nagar,Sahibzada Ajit Singh Nagar,100.0,8407426
+Punjab,Punjab,100.0,Shahid Bhagat Singh Nagar,Shahid Bhagat Singh Nagar,100.0,8407479
+Punjab,Punjab,100.0,Sri Muktsar Sahib,Sri Muktsar Sahib,100.0,7909875
+Rajasthan,Rajasthan,100.0,Chittorgarh,Chittorgarh,100.0,1274041
+Rajasthan,Rajasthan,100.0,Deeg,,0.0,
+Rajasthan,Rajasthan,100.0,Dholpur,Dholpur,100.0,7701204
+Rajasthan,Rajasthan,100.0,Didwana Kuchaman,,0.0,
+Rajasthan,Rajasthan,100.0,Jalore,Jalore,100.0,1269393
+Rajasthan,Rajasthan,100.0,Jhunjhunu,Jhunjhunu,100.0,1268937
+Rajasthan,Rajasthan,100.0,Khairthal-Tijara,,0.0,
+Rajasthan,Rajasthan,100.0,Kotputli-Behror,,0.0,
+Rajasthan,Rajasthan,100.0,Sri Ganganagar,Ganganagar,95.0,1271686
+Sikkim,Sikkim,100.0,Gyalshing,Gyalshing,100.0,1252877
+Sikkim,Sikkim,100.0,Pakyong,Pakyong,100.0,12680256
+Sikkim,Sikkim,100.0,Soreng,Soreng,100.0,12680262
+Tamil Nadu,Tamil Nadu,100.0,Chengalpattu,Chengalpattu,100.0,12212751
+Tamil Nadu,Tamil Nadu,100.0,Kallakurichi,Kallakurichi,100.0,12212752
+Tamil Nadu,Tamil Nadu,100.0,Kanyakumari,Kanyakumari,100.0,1268009
+Tamil Nadu,Tamil Nadu,100.0,Nagapattinam,Nagapattinam,100.0,7627073
+Tamil Nadu,Tamil Nadu,100.0,Nilgiris,Nilgiris,100.0,1261391
+Tamil Nadu,Tamil Nadu,100.0,Ranipet,Ranipet,100.0,12212753
+Tamil Nadu,Tamil Nadu,100.0,Tenkasi,Tenkasi,100.0,12212754
+Tamil Nadu,Tamil Nadu,100.0,Theni,Theni,100.0,7646155
+Tamil Nadu,Tamil Nadu,100.0,Thanjavur,Thanjavur,100.0,1254650
+Tamil Nadu,Tamil Nadu,100.0,Tirupattur,Tirupattur,100.0,12212767
+Tamil Nadu,Tamil Nadu,100.0,Tiruvarur,Tiruvarur,100.0,7646980
+Tamil Nadu,Tamil Nadu,100.0,Viluppuram,Viluppuram,100.0,7646150
+Tamil Nadu,Tamil Nadu,100.0,Virudhunagar,Virudhunagar,100.0,7646157
+Telangana,Telangana,100.0,Bhadradri Kothagudem,Bhadradri Kothagudem,100.0,11875556
+Telangana,Telangana,100.0,Hanamkonda,Hanamkonda,100.0,11875560
+Telangana,Telangana,100.0,Jayashankar Bhupalpally,Jayashankar Bhupalapally,97.87234042553192,11875554
+Telangana,Telangana,100.0,Jogulamba Gadwal,Jogulamba Gadwal,100.0,11875553
+Telangana,Telangana,100.0,Kamareddy,Kamareddy,100.0,11875552
+Telangana,Telangana,100.0,Kumuram Bheem Asifabad,Kumuram Bheem Asifabad,100.0,11875577
+Telangana,Telangana,100.0,Mahabubabad,Mahabubabad,100.0,11875551
+Telangana,Telangana,100.0,Mancherial,Mancherial,100.0,11875550
+Telangana,Telangana,100.0,Medchal–Malkajgiri,Medchal Malkajgiri,94.44444444444444,11875548
+Telangana,Telangana,100.0,Mulugu,Mulugu,100.0,12572551
+Telangana,Telangana,100.0,Nagarkurnool,Nagarkurnool,100.0,11875547
+Telangana,Telangana,100.0,Rajanna Sircilla,Rajanna Sircilla,100.0,11875545
+Telangana,Telangana,100.0,Ranga Reddy,Ranga Reddy,100.0,7626856
+Telangana,Telangana,100.0,Sangareddy,Sangareddy,100.0,11875544
+Telangana,Telangana,100.0,Suryapet,Suryapet,100.0,11875541
+Telangana,Telangana,100.0,Wanaparthy,Wanaparthy,100.0,11875559
+Telangana,Telangana,100.0,Yadadri Bhuvanagiri,Yadadri Bhuvanagiri,100.0,11875561
+Tripura,Tripura,100.0,Dhalai,Dhalai,100.0,9747971
+Tripura,Tripura,100.0,Gomati,Gomati,100.0,11875562
+Tripura,Tripura,100.0,Khowai[a],Khowai,90.0,11875565
+Tripura,Tripura,100.0,North Tripura,North Tripura,100.0,1261174
+Tripura,Tripura,100.0,Sepahijala[b],Sepahijala,86.95652173913044,11875564
+Tripura,Tripura,100.0,South Tripura,South Tripura,100.0,1255671
+Tripura,Tripura,100.0,Unakoti[c],Unakoti,82.35294117647058,11875563
+Tripura,Tripura,100.0,West Tripura,West Tripura,100.0,1252864
+Uttar Pradesh,Uttar Pradesh,100.0,Ambedkar Nagar,Ambedkar Nagar,100.0,7729743
+Uttar Pradesh,Uttar Pradesh,100.0,Ayodhya,Ayodhya,100.0,1271977
+Uttar Pradesh,Uttar Pradesh,100.0,Bagpat,Bagpat,100.0,9072781
+Uttar Pradesh,Uttar Pradesh,100.0,Bahraich,Bahraich,100.0,1277800
+Uttar Pradesh,Uttar Pradesh,100.0,Ballia,Ballia,100.0,1277553
+Uttar Pradesh,Uttar Pradesh,100.0,Barabanki,Barabanki,100.0,1277159
+Uttar Pradesh,Uttar Pradesh,100.0,Chitrakoot,Chitrakoot,100.0,9072788
+Uttar Pradesh,Uttar Pradesh,100.0,Etah,Etah,100.0,1271993
+Uttar Pradesh,Uttar Pradesh,100.0,Gautam Buddha Nagar,Gautam Buddha Nagar,100.0,9072784
+Uttar Pradesh,Uttar Pradesh,100.0,Gonda,Gonda,100.0,1270997
+Uttar Pradesh,Uttar Pradesh,100.0,Kanpur Dehat,Kanpur Dehat,100.0,7729747
+Uttar Pradesh,Uttar Pradesh,100.0,Kanpur Nagar,Kanpur Nagar,100.0,1267997
+Uttar Pradesh,Uttar Pradesh,100.0,Kaushambi,Kaushambi,100.0,9072745
+Uttar Pradesh,Uttar Pradesh,100.0,Kushinagar,Kushinagar,100.0,7626229
+Uttar Pradesh,Uttar Pradesh,100.0,Lakhimpur Kheri,Kheri,90.0,1266768
+Uttar Pradesh,Uttar Pradesh,100.0,Prayagraj,Prayagraj,100.0,1278995
+Uttar Pradesh,Uttar Pradesh,100.0,Sant Kabir Nagar,Sant Kabir Nagar,100.0,9748030
+Uttar Pradesh,Uttar Pradesh,100.0,Shahjahanpur,Shahjahanpur,100.0,1256729
+Uttar Pradesh,Uttar Pradesh,100.0,Shamli[3],Shamli,90.0,11875566
+Uttar Pradesh,Uttar Pradesh,100.0,Shravasti,Shravasti,100.0,7626227
+Uttar Pradesh,Uttar Pradesh,100.0,Siddharthnagar,Siddharthnagar,100.0,7626228
+Uttar Pradesh,Uttar Pradesh,100.0,Sonbhadra,Sonbhadra,100.0,9748013
+Uttarakhand,Uttarakhand,100.0,Chamoli,Chamoli,100.0,1274839
+Uttarakhand,Uttarakhand,100.0,Dehradun,Dehradun,100.0,9072830
+Uttarakhand,Uttarakhand,100.0,Nainital,Nainital,100.0,1262118
+Uttarakhand,Uttarakhand,100.0,Pauri Garhwal,Pauri Garhwal,100.0,1271535
+Uttarakhand,Uttarakhand,100.0,Tehri Garhwal,Tehri Garhwal,100.0,1254807
+Uttarakhand,Uttarakhand,100.0,Udham Singh Nagar,Udham Singh Nagar,100.0,7701516
+West Bengal,West Bengal,100.0,Alipurduar,Alipurduar,100.0,11875573
+West Bengal,West Bengal,100.0,Birbhum,Birbhum,100.0,1275525
+West Bengal,West Bengal,100.0,Cooch Behar,Cooch Behar,100.0,1266437
+West Bengal,West Bengal,100.0,Dakshin Dinajpur,Dakshin Dinajpur,100.0,8299687
+West Bengal,West Bengal,100.0,Darjeeling,Darjeeling,100.0,1273468
+West Bengal,West Bengal,100.0,Hooghly,Hooghly,100.0,1269911
+West Bengal,West Bengal,100.0,Howrah,Howrah,100.0,1270397
+West Bengal,West Bengal,100.0,Maldah,Maldah,100.0,1264122
+West Bengal,West Bengal,100.0,Nadia,Nadia,100.0,1262293
+West Bengal,West Bengal,100.0,North 24 Parganas,North 24 Parganas,100.0,8335144
+West Bengal,West Bengal,100.0,Paschim Bardhaman,Paschim Bardhaman,100.0,11875580
+West Bengal,West Bengal,100.0,Paschim Medinipur,Paschim Medinipur,100.0,8335137
+West Bengal,West Bengal,100.0,Purba Bardhaman,Purba Bardhaman,100.0,1277030
+West Bengal,West Bengal,100.0,Purba Medinipur,Purba Medinipur,100.0,8335139
+West Bengal,West Bengal,100.0,Purulia,Purulia,100.0,1259164
+West Bengal,West Bengal,100.0,South 24 Parganas,South 24 Parganas,100.0,8335041
+West Bengal,West Bengal,100.0,Uttar Dinajpur,Uttar Dinajpur,100.0,8335142
+Andaman and Nicobar,Andaman and Nicobar,100.0,Nicobar,Nicobar,100.0,1261448
+Andaman and Nicobar,Andaman and Nicobar,100.0,North and Middle Andaman,North and Middle Andaman,100.0,9748018
+Andaman and Nicobar,Andaman and Nicobar,100.0,South Andaman,South Andaman,100.0,1278648
+Dadra and Nagar Haveli and Daman and Diu,Dadra and Nagar Haveli and Daman and Diu,100.0,Dadra and Nagar Haveli,Dadra and Nagar Haveli,100.0,9747961
+Dadra and Nagar Haveli and Daman and Diu,Dadra and Nagar Haveli and Daman and Diu,100.0,Daman,Daman,100.0,1273616
+Dadra and Nagar Haveli and Daman and Diu,Dadra and Nagar Haveli and Daman and Diu,100.0,Diu,Diu,100.0,1272504
+Jammu and Kashmir,Jammu and Kashmir,100.0,Budgam,Budgam,100.0,9747938
+Jammu and Kashmir,Jammu and Kashmir,100.0,Bandipore,Bandipore,100.0,9747936
+Jammu and Kashmir,Jammu and Kashmir,100.0,Baramulla,Baramulla,100.0,1277086
+Jammu and Kashmir,Jammu and Kashmir,100.0,Ganderbal,Ganderbal,100.0,9748040
+Jammu and Kashmir,Jammu and Kashmir,100.0,Poonch,Poonch,100.0,9747990
+Jammu and Kashmir,Jammu and Kashmir,100.0,Rajouri,Rajouri,100.0,1258892
+Jammu and Kashmir,Jammu and Kashmir,100.0,Reasi,Reasi,100.0,9747996
+Jammu and Kashmir,Jammu and Kashmir,100.0,Shopian,Shopian,100.0,9748009
+Ladakh,Ladakh,100.0,Kargil,Kargil,100.0,9748001
+Ladakh,Ladakh,100.0,Leh,Leh,100.0,1265343
+Lakshadweep,Lakshadweep,100.0,Lakshadweep,Lakshadweep,100.0,9748019
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,Central Delhi,Central Delhi,100.0,8335421
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,East Delhi,East Delhi,100.0,8335424
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,New Delhi,New Delhi,100.0,8347332
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,North Delhi,North Delhi,100.0,8335422
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,North East Delhi,North East Delhi,100.0,8335425
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,North West Delhi,North West Delhi,100.0,8335427
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,Shahdara,Shahdara,100.0,11875526
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,South Delhi,South Delhi,100.0,8335423
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,South East Delhi,South Delhi,95.0,8335423
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,South West Delhi,South West Delhi,100.0,8335426
+National Capital Territory of Delhi,National Capital Territory of Delhi,100.0,West Delhi,West Delhi,100.0,8335458
+Puducherry,Puducherry,100.0,Mahé,,0.0,
+Puducherry,Puducherry,100.0,Yanam,Yanam,100.0,1252796
