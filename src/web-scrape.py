@@ -5,6 +5,7 @@ Enhanced DrikPanchang scraper with per-district files and VPN blocking detection
 - Stores data in data/marriage_muhurats/{state}/{district}_{geoname_id}.csv
 - Detects blocking and exits with code 2 for VPN rotation
 - Includes debug logging for empty responses
+- Skips completed districts to save time
 """
 from __future__ import annotations
 
@@ -13,16 +14,17 @@ import re
 import sys
 import time
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Set
 import json
 
 import requests
 from bs4 import BeautifulSoup
 
-# ────────────────────────── CONFIG ───────────────────────────────────────
+# ────────────────────────────── CONFIG ───────────────────────────────────────
 INPUT_CSV     = Path("data/districts_geonames.csv")
 OUTPUT_DIR    = Path("data/marriage_muhurats")
 SUMMARY_FILE  = Path("data/marriage_muhurats_summary.json")
+COMPLETED_FILE = Path("data/completed_districts.txt")
 
 BASE_URL = (
     "https://www.drikpanchang.com/shubh-dates/"
@@ -43,7 +45,7 @@ CONSECUTIVE_EMPTY = 0
 MAX_CONSECUTIVE_EMPTY = 10  # If we get 10 empty responses in a row, likely blocked
 DEBUG_MODE = True  # Enable debug logging
 
-# ────────────────────────── HTTP session ────────────────────────────────
+# ────────────────────────────── HTTP session ────────────────────────────────
 sess = requests.Session()
 sess.headers.update({
     "User-Agent": (
@@ -55,7 +57,7 @@ sess.headers.update({
     "Referer": BASE_URL,
 })
 
-# ────────────────────────── helpers ─────────────────────────────────────
+# ────────────────────────────── helpers ─────────────────────────────────────
 _date_pat = re.compile(r"(\w+)\s+(\d{1,2}),\s*(\d{4})")   # Month DD, YYYY
 
 def normalise_ws(text: str) -> str:
@@ -72,6 +74,19 @@ def get_district_file(state: str, district: str, geoname_id: str) -> Path:
     state_dir.mkdir(parents=True, exist_ok=True)
     filename = f"{sanitize_filename(district)}_{geoname_id}.csv"
     return state_dir / filename
+
+def load_completed_districts() -> Set[str]:
+    """Load the set of completed district GeoName IDs"""
+    if not COMPLETED_FILE.exists():
+        return set()
+    
+    with COMPLETED_FILE.open(encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
+
+def mark_district_complete(geoname_id: str) -> None:
+    """Mark a district as complete by adding its GeoName ID to the cache"""
+    with COMPLETED_FILE.open("a", encoding="utf-8") as f:
+        f.write(f"{geoname_id}\n")
 
 def parse_card(card, gid: str) -> Dict | None:
     """Return a dict for cards that mention an auspicious marriage muhurat."""
@@ -99,25 +114,11 @@ def parse_card(card, gid: str) -> Dict | None:
 
     month, day_s, year_s = m.groups()
 
-    muhurat = nakshatra = tithi = ""
-    detail = card.select_one(".dpCardMuhurtaDetail")
-    if detail:
-        for part in map(str.strip, detail.get_text("│", strip=True).split("│")):
-            if   part.startswith("Muhurat:"):
-                muhurat = part.split(":", 1)[1].strip()
-            elif part.startswith("Nakshatra:"):
-                nakshatra = part.split(":", 1)[1].strip()
-            elif part.startswith("Tithi:"):
-                tithi = part.split(":", 1)[1].strip()
-
+    # Only return the date fields
     return {
-        "year"     : int(year_s),
-        "month"    : month,
-        "day"      : int(day_s),
-        "status"   : status,
-        "muhurat"  : muhurat,
-        "nakshatra": nakshatra,
-        "tithi"    : tithi,
+        "year"  : int(year_s),
+        "month" : month,
+        "day"   : int(day_s),
     }
 
 def fetch_year(gid: str, year: int, district: str = "", state: str = "") -> List[Dict]:
@@ -225,7 +226,7 @@ def update_summary(summaries: Dict):
     with SUMMARY_FILE.open("w", encoding="utf-8") as f:
         json.dump(summaries, f, indent=2)
 
-# ────────────────────────── main ────────────────────────────────────────
+# ────────────────────────────── main ────────────────────────────────────────
 
 def main() -> None:
     global CONSECUTIVE_EMPTY
@@ -246,8 +247,19 @@ def main() -> None:
     except Exception as e:
         print(f"⚠️  Connection test failed: {e}")
 
+    # Load completed districts
+    completed_districts = load_completed_districts()
+    print(f"📋 Loaded {len(completed_districts)} completed districts from cache")
+
     with INPUT_CSV.open(encoding="utf-8") as f:
-        districts = [r for r in csv.DictReader(f) if r.get("geoname_id")]
+        all_districts = [r for r in csv.DictReader(f) if r.get("geoname_id")]
+
+    # Filter out completed districts
+    districts = [r for r in all_districts if r["geoname_id"] not in completed_districts]
+    skipped_count = len(all_districts) - len(districts)
+    
+    if skipped_count > 0:
+        print(f"⏭️  Skipping {skipped_count} already completed districts")
 
     # Load or create summary
     summaries = {}
@@ -255,7 +267,8 @@ def main() -> None:
         with SUMMARY_FILE.open(encoding="utf-8") as f:
             summaries = json.load(f)
 
-    total_districts = len(districts)
+    total_districts = len(all_districts)
+    active_districts = len(districts)
     total_dates_scraped = 0
     
     for dist_idx, row in enumerate(districts, 1):
@@ -270,7 +283,9 @@ def main() -> None:
         district_key = f"{state}/{dist}/{gid}"
         district_dates = summaries.get(district_key, 0)
         
-        print(f"\n[{dist_idx}/{total_districts}] Processing {dist}, {state}")
+        # Show progress including skipped districts
+        actual_idx = dist_idx + skipped_count
+        print(f"\n[{actual_idx}/{total_districts}] Processing {dist}, {state} (active: {dist_idx}/{active_districts})")
         if last_date:
             print(f"  Resuming from: {MONTHS[last_date[1]-1]} {last_date[2]}, {last_date[0]}")
         
@@ -280,19 +295,19 @@ def main() -> None:
         with district_file.open("a", newline="", encoding="utf-8", buffering=1) as fout:
             writer = csv.DictWriter(
                 fout,
-                fieldnames=[
-                    "year", "month", "day",
-                    "status", "muhurat", "nakshatra", "tithi",
-                ],
+                fieldnames=["year", "month", "day"],
             )
             if first_write:
                 writer.writeheader()
             
             empty_count_this_district = 0
+            reached_end_year = False
             
             for yr in range(start_year, END_YEAR + 1):
                 # Skip completed years
                 if yr in done_years and yr != start_year:
+                    if yr == END_YEAR:
+                        reached_end_year = True
                     continue
 
                 print(f"  FETCH {yr}  …", end="", flush=True)
@@ -310,12 +325,17 @@ def main() -> None:
                     print(" nothing new", end="")
                     empty_count_this_district += 1
                     
+                    # If we're at END_YEAR with no new data, district is complete
+                    if yr == END_YEAR:
+                        reached_end_year = True
+                        print(" ✓ Complete", end="")
+                    
                     # Additional debug for persistent empty responses
                     if DEBUG_MODE and empty_count_this_district > 5:
                         print(f" (empty #{empty_count_this_district})", end="")
                     
-                    # Check global consecutive empty
-                    if CONSECUTIVE_EMPTY >= MAX_CONSECUTIVE_EMPTY:
+                    # Check global consecutive empty (but not if we're at END_YEAR)
+                    if CONSECUTIVE_EMPTY >= MAX_CONSECUTIVE_EMPTY and yr != END_YEAR:
                         print(f"\n🚫 Got {CONSECUTIVE_EMPTY} consecutive empty/error responses")
                         print("💡 Likely blocked - need VPN rotation")
                         sys.exit(2)
@@ -331,7 +351,17 @@ def main() -> None:
                     total_dates_scraped += 1
 
                 print(f" wrote {len(records):3d}")
+                
+                # Check if we've reached the end year
+                if yr == END_YEAR:
+                    reached_end_year = True
+                
                 time.sleep(SLEEP)
+        
+        # Mark district as complete if we've scraped through END_YEAR
+        if reached_end_year:
+            mark_district_complete(gid)
+            print(f"  ✅ District complete and cached")
         
         # Update summary
         summaries[district_key] = district_dates
@@ -339,13 +369,16 @@ def main() -> None:
         
         # Progress update every 10 districts
         if dist_idx % 10 == 0:
-            print(f"\n📊 Progress: {dist_idx}/{total_districts} districts, "
+            print(f"\n📊 Progress: {actual_idx}/{total_districts} districts "
+                  f"({skipped_count} skipped, {dist_idx} active), "
                   f"{total_dates_scraped} dates scraped this session")
 
     print(f"\n✅ Finished!")
     print(f"📊 Total dates scraped this run: {total_dates_scraped}")
+    print(f"⏭️  Skipped {skipped_count} completed districts")
     print(f"📁 Data stored in: {OUTPUT_DIR}/")
     print(f"📋 Summary file: {SUMMARY_FILE}")
+    print(f"💾 Completed districts cache: {COMPLETED_FILE}")
 
 
 if __name__ == "__main__":
