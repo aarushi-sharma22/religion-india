@@ -76,29 +76,18 @@ fi
 mkdir -p data
 
 # ── 3) Check for required input files ─────────────────────────────────────────
-DISTRICTS_CSV="data/districts.csv"
 GEONAMES_CSV="data/districts_geonames.csv"
 
-# Check if we have the basic districts file
-if [ ! -s "$DISTRICTS_CSV" ]; then
-    echo "❌ $DISTRICTS_CSV missing or empty."
-    echo "   Please ensure you have a CSV with 'state' and 'district' columns."
+# Check if we have the districts with geonames file
+if [ ! -s "$GEONAMES_CSV" ]; then
+    echo "❌ $GEONAMES_CSV missing or empty."
+    echo "   Please ensure you have a CSV with 'state', 'district', and 'geoname_id' columns."
     exit 1
 fi
 
-# ── 4) Fetch geo IDs if needed ────────────────────────────────────────────────
-if [ ! -s "$GEONAMES_CSV" ]; then
-    echo "📍 Fetching GeoName IDs for districts..."
-    python3 src/fetch-geo-ids.py
-    
-    if [ ! -s "$GEONAMES_CSV" ]; then
-        echo "❌ Failed to create $GEONAMES_CSV"
-        exit 1
-    fi
-fi
-echo "✅ $GEONAMES_CSV found"
+echo "✅ $GEONAMES_CSV found with $(tail -n +2 "$GEONAMES_CSV" | wc -l) districts"
 
-# ── 5) Check if missing districts recovery is needed ──────────────────────────
+# ── 4) Check if missing districts recovery is needed ──────────────────────────
 MISSING_CSV="data/missing_districts.csv"
 if [ -s "$MISSING_CSV" ]; then
     echo "🔍 Found missing districts file. Attempting recovery..."
@@ -117,7 +106,7 @@ else
     echo "ℹ️  No missing districts file found. Skipping recovery step."
 fi
 
-# ── 6) VPN Location Management ────────────────────────────────────────────────
+# ── 5) VPN Location Management ────────────────────────────────────────────────
 # Get all available countries and cities from NordVPN
 echo "🌍 Fetching available VPN locations..."
 VPN_LOCATIONS_FILE="/tmp/nordvpn_locations.txt"
@@ -229,7 +218,7 @@ if [ -f /.dockerenv ]; then
     get_vpn_locations
 fi
 
-# ── 7) Run the web scraper with VPN rotation support ──────────────────────────
+# ── 6) Run the web scraper with VPN rotation support ──────────────────────────
 echo ""
 echo "🕷️  Starting web scraper..."
 echo "=================================================="
@@ -271,7 +260,7 @@ if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
     exit 1
 fi
 
-# ── 8) Show results ───────────────────────────────────────────────────────────
+# ── 7) Show results ───────────────────────────────────────────────────────────
 OUTPUT_DIR="data/marriage_muhurats"
 SUMMARY_FILE="data/marriage_muhurats_summary.json"
 
