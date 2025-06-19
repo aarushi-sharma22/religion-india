@@ -131,23 +131,73 @@ get_vpn_locations() {
 
 # Function to get current server hostname
 get_current_server() {
-    nordvpn status | grep "Hostname:" | cut -d' ' -f2 || echo ""
+    echo "🔍 Attempting to get current server..." >&2
+    
+    # First, let's see what nordvpn status actually outputs
+    echo "📋 Full NordVPN status output:" >&2
+    nordvpn status >&2
+    echo "---" >&2
+    
+    # Try multiple methods to get the server name
+    # Method 1: Look for Hostname
+    SERVER=$(nordvpn status | grep "Hostname:" | cut -d' ' -f2)
+    if [ ! -z "$SERVER" ]; then
+        echo "✅ Found server via Hostname: $SERVER" >&2
+        echo "$SERVER"
+        return
+    fi
+    
+    # Method 2: Look for Current server
+    SERVER=$(nordvpn status | grep "Current server:" | cut -d' ' -f3)
+    if [ ! -z "$SERVER" ]; then
+        echo "✅ Found server via Current server: $SERVER" >&2
+        echo "$SERVER"
+        return
+    fi
+    
+    # Method 3: Look for Server pattern (e.g., us1234.nordvpn.com)
+    SERVER=$(nordvpn status | grep -oE '[a-z]{2}[0-9]+\.nordvpn\.com' | head -1)
+    if [ ! -z "$SERVER" ]; then
+        echo "✅ Found server via regex pattern: $SERVER" >&2
+        echo "$SERVER"
+        return
+    fi
+    
+    # Method 4: Try to extract from any line containing .nordvpn.com
+    SERVER=$(nordvpn status | grep -o '[^ ]*\.nordvpn\.com' | head -1)
+    if [ ! -z "$SERVER" ]; then
+        echo "✅ Found server via .nordvpn.com search: $SERVER" >&2
+        echo "$SERVER"
+        return
+    fi
+    
+    echo "❌ Could not extract server name from status" >&2
+    echo ""
 }
 
 # Function to rotate VPN on error
 rotate_vpn() {
     if [ -f /.dockerenv ]; then
         echo "🔄 Rotating VPN connection..."
+        echo "📊 Blocked servers count: $(wc -l < "$BLOCKED_SERVERS_FILE")"
         
         # Get current server before disconnecting
         CURRENT_SERVER=$(get_current_server)
         if [ ! -z "$CURRENT_SERVER" ]; then
             echo "📍 Marking server as blocked: $CURRENT_SERVER"
             echo "$CURRENT_SERVER" >> "$BLOCKED_SERVERS_FILE"
+        else
+            echo "⚠️  Could not determine current server"
         fi
         
+        # Force disconnect
+        echo "🔌 Disconnecting..."
         nordvpn disconnect
-        sleep 2
+        sleep 3
+        
+        # Verify disconnection
+        echo "🔍 Verifying disconnection..."
+        nordvpn status | head -5
         
         # Get fresh list of locations if we don't have it
         if [ ! -s "$VPN_LOCATIONS_FILE" ]; then
@@ -163,35 +213,49 @@ rotate_vpn() {
             # Pick a random country from the list
             RANDOM_COUNTRY=$(shuf -n 1 "$VPN_LOCATIONS_FILE")
             
-            echo "🌍 Attempting to connect to $RANDOM_COUNTRY..."
+            echo ""
+            echo "🌍 Attempt $((ATTEMPTS + 1))/$MAX_ATTEMPTS: Connecting to $RANDOM_COUNTRY..."
             
             # Try to connect and capture the output
             CONNECT_OUTPUT=$(nordvpn connect "$RANDOM_COUNTRY" 2>&1)
+            echo "📝 Connection output: $CONNECT_OUTPUT"
             
             if echo "$CONNECT_OUTPUT" | grep -q "You are connected"; then
-                # Extract the server from the output (e.g., de744.nordvpn.com)
-                NEW_SERVER=$(echo "$CONNECT_OUTPUT" | grep -oE '[a-z]+[0-9]+\.nordvpn\.com' | head -1)
+                echo "✅ Connection message detected!"
+                # Wait a moment for connection to stabilize
+                sleep 3
                 
-                if [ -z "$NEW_SERVER" ]; then
-                    # Try alternative extraction method
-                    NEW_SERVER=$(nordvpn status | grep "Hostname:" | awk '{print $2}')
-                fi
+                # Get the new server
+                NEW_SERVER=$(get_current_server)
                 
                 # Check if this server is blocked
                 if [ ! -z "$NEW_SERVER" ] && grep -q "^$NEW_SERVER$" "$BLOCKED_SERVERS_FILE"; then
-                    echo "⚠️  Connected to blocked server $NEW_SERVER, trying again..."
+                    echo "⚠️  Connected to blocked server $NEW_SERVER, disconnecting..."
                     nordvpn disconnect
-                    sleep 1
+                    sleep 2
+                elif [ -z "$NEW_SERVER" ]; then
+                    # Couldn't determine server, but we're connected, so proceed
+                    echo "⚠️  Connected but couldn't determine server name - proceeding anyway"
+                    CONNECTED=true
                 else
                     CONNECTED=true
-                    echo "✅ Connected successfully!"
-                    sleep 3
-                    nordvpn status | grep -E "(Status:|Current server:|Country:|City:)"
+                    echo "✅ Connected successfully to $NEW_SERVER!"
+                    echo "📍 Final connection status:"
+                    nordvpn status | grep -E "(Status:|Current server:|Country:|City:|IP:|Transfer:|Uptime:)"
                 fi
             else
-                echo "❌ Failed to connect to $RANDOM_COUNTRY"
-                # Debug: show the actual error
-                echo "   Error: $(echo "$CONNECT_OUTPUT" | grep -v "A new version" | head -1)"
+                echo "❌ Connection failed to $RANDOM_COUNTRY"
+                # Debug: show more details about the error
+                if echo "$CONNECT_OUTPUT" | grep -q "already connected"; then
+                    echo "⚠️  Already connected - forcing disconnect"
+                    nordvpn disconnect
+                    sleep 2
+                elif echo "$CONNECT_OUTPUT" | grep -q "Please check your internet"; then
+                    echo "⚠️  Internet connectivity issue detected"
+                elif echo "$CONNECT_OUTPUT" | grep -q "Unable to connect"; then
+                    echo "⚠️  Unable to connect to $RANDOM_COUNTRY servers"
+                fi
+                sleep 1
             fi
             
             ATTEMPTS=$((ATTEMPTS + 1))
@@ -199,17 +263,51 @@ rotate_vpn() {
         
         if [ "$CONNECTED" = false ]; then
             echo "❌ Could not connect to any unblocked server after $MAX_ATTEMPTS attempts!"
-            echo "🔄 Clearing blocked servers list and trying again..."
+            echo "🔄 Clearing blocked servers list and trying different approaches..."
             > "$BLOCKED_SERVERS_FILE"
             
-            # Try one more time with a clean slate
-            if nordvpn connect; then
-                echo "✅ Connected with clean slate"
+            # Try connecting without specifying country
+            echo "🌍 Trying auto-connect (best available server)..."
+            CONNECT_OUTPUT=$(nordvpn connect 2>&1)
+            echo "📝 Auto-connect output: $CONNECT_OUTPUT"
+            
+            if echo "$CONNECT_OUTPUT" | grep -q "You are connected"; then
+                echo "✅ Connected with auto-connect"
+                CONNECTED=true
+                nordvpn status | grep -E "(Status:|Current server:|Country:|City:)"
             else
-                echo "❌ Fatal: Cannot establish VPN connection"
-                exit 1
+                # Last resort: restart NordVPN service
+                echo "🔧 Restarting NordVPN service..."
+                /etc/init.d/nordvpn stop
+                sleep 2
+                /etc/init.d/nordvpn start
+                sleep 5
+                
+                # Check if daemon is running
+                if pgrep -x "nordvpnd" > /dev/null; then
+                    echo "✅ NordVPN daemon is running"
+                else
+                    echo "❌ NordVPN daemon failed to start"
+                fi
+                
+                echo "🌍 Final attempt after service restart..."
+                CONNECT_OUTPUT=$(nordvpn connect 2>&1)
+                echo "📝 Final connect output: $CONNECT_OUTPUT"
+                
+                if echo "$CONNECT_OUTPUT" | grep -q "You are connected"; then
+                    echo "✅ Connected after service restart"
+                    nordvpn status | grep -E "(Status:|Current server:|Country:|City:)"
+                else
+                    echo "❌ Fatal: Cannot establish VPN connection"
+                    echo "📋 Final status:"
+                    nordvpn status
+                    exit 1
+                fi
             fi
         fi
+        
+        echo "🔄 VPN rotation complete"
+        echo "---"
     fi
 }
 
@@ -223,42 +321,36 @@ echo ""
 echo "🕷️  Starting web scraper..."
 echo "=================================================="
 
-# Run scraper with error handling
-MAX_RETRIES=10
+# Run scraper with infinite retry for unattended operation
 RETRY_COUNT=0
+SUCCESS=false
 
-while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-    echo "🚀 Scraping attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+while [ "$SUCCESS" = false ]; do
+    RETRY_COUNT=$((RETRY_COUNT + 1))
+    echo "🚀 Scraping attempt $RETRY_COUNT"
     
     # Run the scraper and capture exit code
     if python3 src/web-scrape.py; then
         echo "✅ Scraping completed successfully!"
-        break
+        SUCCESS=true
     else
         EXIT_CODE=$?
         echo "❌ Scraper failed with exit code: $EXIT_CODE"
         
-        if [ $RETRY_COUNT -lt $((MAX_RETRIES - 1)) ]; then
-            # Rotate VPN immediately if blocked (exit code 2)
-            if [ $EXIT_CODE -eq 2 ]; then
-                rotate_vpn
-                echo "⏳ Waiting 5 seconds before retry..."
-                sleep 5
-            else
-                # For other errors, wait a bit longer
-                echo "⏳ Waiting 10 seconds before retry..."
-                sleep 10
-            fi
-        fi
+        # Always rotate VPN on any failure for unattended operation
+        rotate_vpn
         
-        RETRY_COUNT=$((RETRY_COUNT + 1))
+        # Wait before retry
+        echo "⏳ Waiting 10 seconds before retry..."
+        sleep 10
+        
+        # Every 50 attempts, clear the blocked servers list
+        if [ $((RETRY_COUNT % 50)) -eq 0 ]; then
+            echo "🧹 Clearing blocked servers list after $RETRY_COUNT attempts"
+            > "$BLOCKED_SERVERS_FILE"
+        fi
     fi
 done
-
-if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
-    echo "❌ Scraping failed after $MAX_RETRIES attempts"
-    exit 1
-fi
 
 # ── 7) Show results ───────────────────────────────────────────────────────────
 OUTPUT_DIR="data/marriage_muhurats"
