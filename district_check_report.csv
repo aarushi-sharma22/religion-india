@@ -1,0 +1,107 @@
+state,district_expected,status,matched_file,similarity
+A&N Island,North & Middle Andaman,⚠️ close match,North and Middle Andaman.csv,1.00
+A&N Island,South Andamana,⚠️ close match,South Andaman.csv,0.96
+Andra Pradesh,Anantpur,⚠️ close match,Ananthapur.csv,0.89
+Andra Pradesh,Chitoor,⚠️ close match,Chittoor.csv,0.93
+Andra Pradesh,Sri Potti Sriramulu Nellore,❌ missing district,Nellore.csv,0.41
+Andra Pradesh,Vishakapatnam,⚠️ close match,Visakhapatnam.csv,0.92
+Andra Pradesh,Y.S.R.,❌ missing district,YSR Kadapa.csv,0.38
+Arunachal Pradesh,Kurung Kamey,⚠️ close match,Kurung Kumey.csv,0.92
+Arunachal Pradesh,Papumpare,⚠️ close match,Papum Pare.csv,0.95
+Assam,Marigaon,⚠️ close match,Morigaon.csv,0.88
+Assam,North Cachar Hills,❌ missing district,Cachar.csv,0.50
+Assam,Sibsagar,⚠️ close match,Sivasagar.csv,0.82
+Bihar,Kaimur (Bhabua),❌ missing district,Darbhanga.csv,0.50
+Bihar,Pashchim Champaran,⚠️ close match,East Champaran.csv,0.75
+Bihar,Purba Champaran,⚠️ close match,East Champaran.csv,0.76
+Chhattisgarh,Janjgir - Champa,⚠️ close match,Janjgir-Champa.csv,0.93
+Chhattisgarh,Kawardha,⚠️ close match,Kabirdham.csv,0.71
+Chhattisgarh,Koriya,⚠️ close match,Korba.csv,0.73
+Haryana,Gurgaon,❌ missing district,Gurugram.csv,0.67
+Haryana,Mewat,❌ missing district,Rewari.csv,0.55
+Haryana,Panipath,⚠️ close match,Panipat.csv,0.93
+Haryana,Sonipath,⚠️ close match,Sonipat.csv,0.93
+Himachal Pradesh,Lahul & Spiti,⚠️ close match,Lahul and Spiti.csv,1.00
+Jharkhand,Hazaribagh,⚠️ close match,Hazaribag.csv,0.95
+Jharkhand,Kodarma,⚠️ close match,Koderma.csv,0.86
+Jharkhand,Pakaur,⚠️ close match,Pakur.csv,0.91
+Jharkhand,Pashchimi Singhbhum,⚠️ close match,East Singhbhum.csv,0.73
+Jharkhand,Purbi Singhbhum,❌ missing district,West Singhbhum.csv,0.69
+Karnataka,Bangalore,⚠️ close match,Bangalore Rural.csv,0.75
+Karnataka,Belgaum,❌ missing district,Belagavi.csv,0.67
+Karnataka,Bellary,⚠️ close match,Ballari.csv,0.71
+Karnataka,Chikkaballarpura,⚠️ close match,Chikkaballapur.csv,0.93
+Karnataka,Davangere,⚠️ close match,Davanagere.csv,0.95
+Karnataka,Gulbarga,❌ missing district,Belagavi.csv,0.50
+Karnataka,Tumkur,⚠️ close match,Tumakuru.csv,0.86
+Kerala,Mallappuram,⚠️ close match,Malappuram.csv,0.95
+Kerala,PALAKKAD,⚠️ close match,Palakkad.csv,1.00
+Kerala,Wayanand,⚠️ close match,Wayanad.csv,0.93
+Kerala,kollam,⚠️ close match,Kollam.csv,1.00
+Madhya Pradesh,Datai,⚠️ close match,Datia.csv,0.80
+Madhya Pradesh,East Nimar,❌ missing district,Katni.csv,0.53
+Madhya Pradesh,Narsimhapur,⚠️ close match,Narsinghpur.csv,0.82
+Madhya Pradesh,West Nimar,❌ missing district,Satna.csv,0.53
+Maharashtra,Ahmadnagar,⚠️ close match,Ahmednagar.csv,0.90
+Maharashtra,Amrawati,⚠️ close match,Amravati.csv,0.88
+Maharashtra,Bid,❌ missing district,Beed.csv,0.57
+Maharashtra,Buldana,⚠️ close match,Buldhana.csv,0.93
+Maharashtra,Gondiya,⚠️ close match,Gondia.csv,0.92
+Maharashtra,Mumbai,❌ missing district,Mumbai Suburban.csv,0.57
+Maharashtra,Mumbai (Suburban),⚠️ close match,Mumbai Suburban.csv,0.94
+Maharashtra,Raigarh,⚠️ close match,Raigad.csv,0.77
+Meghalaya,Jaintia Hills,⚠️ close match,East Jaintia Hills.csv,0.84
+Mizoram,KOLASIB,⚠️ close match,Kolasib.csv,1.00
+Mizoram,LAWNGTLAI,⚠️ close match,Lawngtlai.csv,1.00
+Mizoram,LUNGLEI,⚠️ close match,Lunglei.csv,1.00
+Mizoram,SAIHA,⚠️ close match,Saiha.csv,1.00
+Mizoram,SERCHHIP,⚠️ close match,Serchhip.csv,1.00
+Nagaland,Paren,⚠️ close match,Peren.csv,0.80
+Odisha,Anugul,⚠️ close match,Angul.csv,0.91
+Odisha,Baleshwar,❌ missing district,Balangir.csv,0.59
+Odisha,Baudh,⚠️ close match,Boudh.csv,0.80
+Odisha,Jagatsinghapur,⚠️ close match,Jagatsinghpur.csv,0.96
+Odisha,Jajapur,⚠️ close match,Jajpur.csv,0.92
+Odisha,Nabarangapur,⚠️ close match,Nabarangpur.csv,0.96
+Odisha,Sonapur,⚠️ close match,Subarnapur.csv,0.71
+Puducherry,Mahe,❌ missing district,Puducherry.csv,0.29
+Puducherry,Pondicherry,⚠️ close match,Puducherry.csv,0.76
+Puducherry,Yaman,❌ missing district,Yanam.csv,0.60
+Punjab,Bhathinda,⚠️ close match,Bathinda.csv,0.94
+Punjab,Muktsar,❌ missing district,Amritsar.csv,0.67
+Punjab,SAS Nagar,❌ missing district,Sangrur.csv,0.62
+Punjab,Taran Taran,⚠️ close match,Tarn Taran.csv,0.95
+Rajasthan,Chittaurgarh,⚠️ close match,Chittorgarh.csv,0.87
+Rajasthan,Dhaulpur,⚠️ close match,Dholpur.csv,0.80
+Rajasthan,Hamumagarh,⚠️ close match,Hanumangarh.csv,0.86
+Rajasthan,Jhunjhunun,⚠️ close match,Jhunjhunu.csv,0.95
+Sikkim,East,❌ missing district,Gangtok.csv,0.36
+Sikkim,North,❌ missing district,Soreng.csv,0.36
+Sikkim,South,❌ missing district,Soreng.csv,0.36
+Sikkim,West,❌ missing district,Soreng.csv,0.20
+Tamil Nadu,Kancheepuram,⚠️ close match,Kanchipuram.csv,0.87
+Tamil Nadu,Kanniyakumari,⚠️ close match,Kanyakumari.csv,0.92
+Tamil Nadu,Thiruvallur,⚠️ close match,Tiruvallur.csv,0.95
+Tamil Nadu,Thiruvarur,⚠️ close match,Tiruvarur.csv,0.95
+Tamil Nadu,Thoothukkudi,⚠️ close match,Thoothukudi.csv,0.96
+Telangana,Rangareddy,⚠️ close match,Ranga Reddy.csv,0.95
+Telangana,Warngal,⚠️ close match,Warangal.csv,0.93
+Uttar Pradesh,Allahabad,❌ missing district,Farrukhabad.csv,0.60
+Uttar Pradesh,Baghpat,⚠️ close match,Bagpat.csv,0.92
+Uttar Pradesh,Bulandshahar,⚠️ close match,Bulandshahr.csv,0.96
+Uttar Pradesh,Faizabad,⚠️ close match,Firozabad.csv,0.82
+Uttar Pradesh,Jyotiba Phule Nagar,❌ missing district,Kanpur Nagar.csv,0.58
+Uttar Pradesh,Mahrajganj,⚠️ close match,Maharajganj.csv,0.95
+Uttar Pradesh,Rae Bareli,⚠️ close match,Raebareli.csv,0.95
+Uttar Pradesh,Sant Ravidas Nagar Bhadohi,❌ missing district,Sant Kabir Nagar.csv,0.57
+Uttar Pradesh,Shrawasti,⚠️ close match,Shravasti.csv,0.89
+Uttrakhand,Garhwal,⚠️ close match,Tehri Garhwal.csv,0.70
+Uttrakhand,Hardwar,⚠️ close match,Haridwar.csv,0.93
+West Bengal,Barddhaman,⚠️ close match,Purba Bardhaman.csv,0.72
+West Bengal,Darjiling,⚠️ close match,Darjeeling.csv,0.84
+West Bengal,Haora,⚠️ close match,Howrah.csv,0.73
+West Bengal,Hugli,❌ missing district,Purulia.csv,0.50
+West Bengal,Koch Bihar,⚠️ close match,Cooch Behar.csv,0.76
+West Bengal,Purba Mednipur,⚠️ close match,Purba Medinipur.csv,0.97
+West Bengal,Puruliya,⚠️ close match,Purulia.csv,0.93
+West Bengal,kolkata,⚠️ close match,Kolkata.csv,1.00

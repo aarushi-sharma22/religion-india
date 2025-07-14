@@ -1,0 +1,27 @@
+state,district_expected,status,matched_file,similarity
+Andra Pradesh,Sri Potti Sriramulu Nellore,❌ missing district,Nellore.csv,0.41
+Andra Pradesh,Y.S.R.,❌ missing district,YSR Kadapa.csv,0.38
+Assam,North Cachar Hills,❌ missing district,Cachar.csv,0.50
+Bihar,Kaimur (Bhabua),❌ missing district,Darbhanga.csv,0.50
+Haryana,Gurgaon,❌ missing district,Gurugram.csv,0.67
+Haryana,Mewat,❌ missing district,Rewari.csv,0.55
+Jharkhand,Purbi Singhbhum,❌ missing district,West Singhbhum.csv,0.69
+Karnataka,Belgaum,❌ missing district,Belagavi.csv,0.67
+Karnataka,Gulbarga,❌ missing district,Belagavi.csv,0.50
+Madhya Pradesh,East Nimar,❌ missing district,Katni.csv,0.53
+Madhya Pradesh,West Nimar,❌ missing district,Satna.csv,0.53
+Maharashtra,Bid,❌ missing district,Beed.csv,0.57
+Maharashtra,Mumbai,❌ missing district,Mumbai Suburban.csv,0.57
+Odisha,Baleshwar,❌ missing district,Balangir.csv,0.59
+Puducherry,Mahe,❌ missing district,Puducherry.csv,0.29
+Puducherry,Yaman,❌ missing district,Yanam.csv,0.60
+Punjab,Muktsar,❌ missing district,Amritsar.csv,0.67
+Punjab,SAS Nagar,❌ missing district,Sangrur.csv,0.62
+Sikkim,East,❌ missing district,Gangtok.csv,0.36
+Sikkim,North,❌ missing district,Soreng.csv,0.36
+Sikkim,South,❌ missing district,Soreng.csv,0.36
+Sikkim,West,❌ missing district,Soreng.csv,0.20
+Uttar Pradesh,Allahabad,❌ missing district,Farrukhabad.csv,0.60
+Uttar Pradesh,Jyotiba Phule Nagar,❌ missing district,Kanpur Nagar.csv,0.58
+Uttar Pradesh,Sant Ravidas Nagar Bhadohi,❌ missing district,Sant Kabir Nagar.csv,0.57
+West Bengal,Hugli,❌ missing district,Purulia.csv,0.50
