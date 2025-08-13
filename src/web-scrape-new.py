@@ -16,10 +16,10 @@ from bs4 import BeautifulSoup
 
 # ── CONFIG ───────────────────────────────────────────────────────────────────
 TARGETS = [
-    {"state": "Maharashtra",         "district": "Mumbai",    "gid": "1275339"},
-    {"state": "Punjab",  "district": "Mohali",  "gid": "6992326"},
-
+    {"state": "29", "district": "20", "gid": "1262321"},
+    {"state": "34", "district": "02", "gid": "1267887"},
 ]
+
 
 START_YEAR, END_YEAR = 1894, 2024
 BASE_URL = ("https://www.drikpanchang.com/shubh-dates/"
